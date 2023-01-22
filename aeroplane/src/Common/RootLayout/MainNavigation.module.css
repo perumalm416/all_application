@@ -1,0 +1,29 @@
+.mainNav {
+  background-color: rgb(26, 13, 82);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+.mainNav img+span{
+  vertical-align:super;
+  padding-left: 10px;
+}
+.navTabs {
+  display: flex;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+.navTabs li{
+  width: fit-content;
+  padding: 5px;
+}
+.navTabs li:hover{
+font-weight: bolder;
+}
+.mainNav .navBtn{
+  width: fit-content;
+  padding: 5px 10px;
+  margin: 3px;
+}
