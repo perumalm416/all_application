@@ -6,7 +6,7 @@ export const RootLayout = () => {
     <Fragment>
       <MainNavigation />
       <h2>RootLayout page</h2>
-    
+     
     </Fragment>
   );
 };
