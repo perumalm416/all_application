@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { AccountPage } from "../../Component/Account/Account";
 import { MainNavigation } from "./MainNavigation";
 
 export const RootLayout = () => {
@@ -6,7 +7,7 @@ export const RootLayout = () => {
     <Fragment>
       <MainNavigation />
       <h2>RootLayout page</h2>
-     
+      
     </Fragment>
   );
 };
