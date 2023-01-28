@@ -1,7 +1,7 @@
 import { Fragment } from "react";
-import cssStyle from "./Account.module.css"
+import cssStyle from "./Passenger.module.css"
 
-export const SignIn = () => {
+export const PassengerSignIn = () => {
   return (
     <Fragment>
       <form className={cssStyle.signForm}>

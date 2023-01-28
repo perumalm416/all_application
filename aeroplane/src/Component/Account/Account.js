@@ -1,16 +1,12 @@
 import { Fragment } from "react";
-import { PassengerForm } from "../../Common/Passenger/PassengerForm";
-import { MyProfiler } from "../../Common/Profiler/Profiler";
-import { SignIn } from "./SignIn";
-import { SignUp } from "./SignUp";
+import { PassengerForm } from "./Passenger/PassengerForm";
+import { MyProfiler } from "./Profiler/Profiler";
+
 
 export const AccountPage = () => {
   return (
     <Fragment>
       {/* <h2>Account Page</h2> */}
-      <SignIn />
-      <SignUp/>
-      {/* <MyProfiler/> */}
       <PassengerForm/>
     </Fragment>
   );
