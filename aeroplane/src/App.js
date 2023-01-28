@@ -1,8 +1,6 @@
-import "./App.css";
-import { PassengerForm } from "./Common/Passenger/PassengerForm";
 import { RootLayout } from "./Common/RootLayout/RootLayout";
-import { AccountPage } from "./Component/Account/Account";
-import { FlightSearchForm } from "./FlightDetails/FlightSearchForm";
+import { AddFlightForm } from "./Flight/AddFlightForm";
+import { FlightSearchForm } from "./Flight/FlightDetails/FlightSearchForm";
 
 function App() {
   return (
@@ -10,7 +8,7 @@ function App() {
       <RootLayout />
       <h2>Flight Travelling Booking Application</h2>
       <div className="">
-        <FlightSearchForm />
+        <AddFlightForm />
       </div>
     </div>
   );
