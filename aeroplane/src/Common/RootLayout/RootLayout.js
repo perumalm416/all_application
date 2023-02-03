@@ -1,13 +1,18 @@
 import { Fragment } from "react";
-import { AccountPage } from "../../Component/Account/Account";
-import { MainNavigation } from "./MainNavigation";
+import { AdminNavbar } from "./NavigationBar/AdminNavbar";
+import { UserNavbar } from "./NavigationBar/UserNavbar";
+import cssStyle from "./RootLayout.module.css";
 
 export const RootLayout = () => {
   return (
     <Fragment>
-      <MainNavigation />
-      <h2>RootLayout page</h2>
-      
+      <div>
+        <div className={cssStyle.headNavbar}>
+          <UserNavbar />
+        </div>
+        <h2>RootLayout page</h2>
+        <AdminNavbar />
+      </div>
     </Fragment>
   );
 };

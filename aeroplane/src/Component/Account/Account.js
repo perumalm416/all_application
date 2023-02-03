@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { PassengerForm } from "./Passenger/PassengerForm";
-import { MyProfiler } from "./Profiler/Profiler";
+
 
 
 export const AccountPage = () => {

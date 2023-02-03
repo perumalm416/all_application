@@ -1,0 +1,46 @@
+.mainNav {
+  margin: 0px;
+  padding: 0px;
+  background-color: rgb(26, 13, 82);
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.mainNav img {
+  width: 30px;
+  height: 30px;
+  border: 2px solid white;
+  vertical-align: middle;
+  margin: 0px 10px 0px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+.navTabs {
+  list-style: none;
+  display: flex;
+  margin: 0px;
+  box-sizing: border-box;
+}
+.navTabs li {
+  padding: 1px 5px;
+}
+.navTabs li:hover {
+  font-weight: bolder;
+  color: white;
+}
+.mainNav .navBtn {
+  width: fit-content;
+  padding: 3px 10px;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 500px) {
+  .mainNav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
