@@ -1,0 +1,25 @@
+/* 
+
+.headNavbar{}
+.sideNavbar{
+    background-color: rgb(209, 243, 229);
+  width: 15%;
+  float: left;
+  overflow: scroll;
+  height: 100%;
+  
+}
+.mainBody{
+    width: 85%;
+    float: left;
+    height: 100%;
+    overflow: scroll;
+    background-color: rgb(240, 210, 217);
+}
+
+@media screen and (max-width:400px) {
+    .sideNavbar{
+        width: 30%;
+       
+    }
+} */

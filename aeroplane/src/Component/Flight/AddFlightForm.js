@@ -1,4 +1,5 @@
 import { Fragment, useState } from "react";
+import { FlightList } from "./FlightList";
 
 const originPlace = [
   "Chennai",
@@ -12,12 +13,13 @@ const originPlace = [
 
 export const AddFlightForm = () => {
   const [selectedOriginPlace, setSelectedOriginPlace] = useState();
-  const [addFlightInput, setAddFlightInput] = useState({
+  const [flightInfo, setFlightInfo] = useState([]);
+  const [flightInput, setAddFlightInput] = useState({
     flightName: "",
     origin: "",
     destination: "",
     departureDate: "",
-    returnDate: "",
+    arrivalDate: "",
     price: "",
   });
 
@@ -27,7 +29,7 @@ export const AddFlightForm = () => {
 
   const onFlightSelectHandler = (event) => {
     setAddFlightInput((prevState) => {
-      return;
+      return { ...prevState, flightName: event.target.value };
     });
   };
   const onOriginPlaceHandler = (event) => {
@@ -41,11 +43,35 @@ export const AddFlightForm = () => {
       return { ...prevState, destination: event.target.value };
     });
   };
-  const onArrivalDateHandler = (event) => {};
-  const onDepartureDateHandler = (event) => {};
-  const onPriceHandler = (event) => {};
+  const onArrivalDateHandler = (event) => {
+    setAddFlightInput((prevState) => {
+      return { ...prevState, arrivalDate: event.target.value };
+    });
+  };
+  const onDepartureDateHandler = (event) => {
+    setAddFlightInput((prevState) => {
+      return { ...prevState, departureDate: event.target.value };
+    });
+  };
+  const onPriceHandler = (event) => {
+    setAddFlightInput((prevState) => {
+      return { ...prevState, price: event.target.value };
+    });
+  };
   const onSubmitHandler = (event) => {
     event.preventDefault();
+    const flightDetails = {
+      flightName: flightInput.flightName,
+      origin: flightInput.origin,
+      destination: flightInput.destination,
+      departureDate: flightInput.departureDate,
+      arrivalDate: flightInput.arrivalDate,
+      price: flightInput.price,
+    };
+    console.log(flightDetails);
+    setFlightInfo((prevState) => {
+      return [...prevState, flightDetails];
+    });
   };
   return (
     <Fragment>
@@ -131,36 +157,8 @@ export const AddFlightForm = () => {
           <button type="submit">Add Flight</button>
         </div>
       </form>
-      {/* table =========================== */}
-      <div>
-        <h3>Flight Lists</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>S.No</th>
-              <th>Flight Name</th>
-              <th>Depature</th>
-              <th>Arrival</th>
-              <th>Origin</th>
-              <th>Destination</th>
-              <th>Price</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      {/* Flight list =========================== */}
+     <FlightList flightInfo={flightInfo}/>
     </Fragment>
   );
 };
