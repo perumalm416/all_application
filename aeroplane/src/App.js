@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { RouterProvider } from "react-router-dom";
-import { RouterConfigure } from "./Component/Router";
+import { RouterConfigure } from "./Router";
 import "./App.css"
 function App() {
   return (

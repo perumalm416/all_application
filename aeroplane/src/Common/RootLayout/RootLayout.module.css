@@ -1,7 +1,7 @@
 .headNavbar {
   margin: 0px;
   padding: 0px;
-  background-image: url("./aeroplan.jpg");
+  background-image: url("../RootLayout/Image/aeroplan.jpg");
   background-size: cover;
   overflow: auto;
   position: fixed;

@@ -1,12 +1,15 @@
 import { Fragment, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { flightSearchAction } from "../../../Store/UserFlightSlice";
 
 const FormElement = styled.form`
   & input,
   &select,
   label {
     display: block;
-    width:300px;
+    width: 300px;
   }
 `;
 
@@ -21,7 +24,9 @@ const originPlace = [
 ];
 
 export const FlightSearchForm = () => {
-  const [selectedOriginPlace, setSelectedOriginPlace] = useState();
+  const [selectedOriginPlace, setSelectedOriginPlace] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [flightSearchInput, setFlightSearchInput] = useState({
     origin: "",
     destination: "",
@@ -68,14 +73,24 @@ export const FlightSearchForm = () => {
   };
   const onSubmitHandler = (event) => {
     event.preventDefault();
-    console.log(flightSearchInput);
+    const userFlightInput = {
+      origin: flightSearchInput.origin,
+      destination: flightSearchInput.destination,
+      noOfPassengers: flightSearchInput.noOfPassengers,
+      departureDate: flightSearchInput.departureDate,
+      returnDate: flightSearchInput.returnDate,
+      classtype: flightSearchInput.classtype,
+    };
+    
+    dispatch(flightSearchAction.flightSearchInfo((userFlightInput)));
+    navigate("/flight-search-info");
   };
   return (
     <Fragment>
       <div>
         <h3>Round trip</h3>
       </div>
-      <FormElement>
+      <FormElement onSubmit={onSubmitHandler}>
         <div>
           <label htmlFor="originPlace">From</label>
           <select
@@ -153,7 +168,7 @@ export const FlightSearchForm = () => {
           </select>
         </div>
         <div>
-          <button type="submit" id="searchFlight" onClick={onSubmitHandler}>
+          <button type="submit" id="searchFlight">
             Search Flight
           </button>
         </div>

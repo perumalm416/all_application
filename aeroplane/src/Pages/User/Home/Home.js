@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { FlightSearchForm } from "../../../Component/Flight/FlightSearchForm";
+import { FlightSearchForm } from "./FlightSearchForm";
 import cssStyle from "./Home.module.css";
 
 export const Home = () => {
