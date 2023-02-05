@@ -14,10 +14,7 @@ export const RouterConfigure = createBrowserRouter([
     path: "/",
     element: <RootLayout />,
     children: [
-      {
-        index: "",
-        element: <Home />,
-      },
+      { index: "", element: <Home /> },
       { path: "contact-us", element: <ContactUsPage /> },
       { path: "account", element: <AccountPage /> },
       { path: "flight-search-info", element: <SearchFlightInfo /> },

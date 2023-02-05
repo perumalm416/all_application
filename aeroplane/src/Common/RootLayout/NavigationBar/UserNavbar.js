@@ -23,6 +23,12 @@ export const UserNavbar = () => {
            <option>Admin</option>
           </select> */}
           <button className={cssStyle.navBtn}>Profiler</button>
+          <div>
+          <ul >         
+          <li> <NavLink to="/" className={({isActive})=>isActive?cssStyle.active:cssStyle.unActive}>Home</NavLink></li>
+          <li> <NavLink to="contact-us" className={({isActive})=>isActive?cssStyle.active:cssStyle.unActive}>ContactUs</NavLink></li>
+        </ul>
+          </div>
         </div>
       </nav>
     </Fragment>

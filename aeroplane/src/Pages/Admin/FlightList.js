@@ -1,11 +1,11 @@
-import { Fragment } from "react"
+import { Fragment } from "react";
+import cssStyle from "./FlightList.module.css";
 
-
-
-export const FlightList=(props)=>{
-    const flightInfo=props.flightInfo;
-    return<Fragment>
-         <div>
+export const FlightList = (props) => {
+  const flightInfo = props.flightInfo;
+  return (
+    <Fragment>
+      <div className={cssStyle.container}>
         <h3>Flight Lists</h3>
         <table>
           <thead>
@@ -40,4 +40,5 @@ export const FlightList=(props)=>{
         </table>
       </div>
     </Fragment>
-}
+  );
+};
