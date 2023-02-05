@@ -1,7 +1,7 @@
 .mainNav {
   margin: 0px;
   padding: 0px;
-  background-color: rgb(26, 13, 82);
+  background-color: rgb(12, 4, 45);
   color: white;
   text-align: center;
   line-height: 50px;
@@ -18,6 +18,10 @@
   border-radius: 6px;
   box-sizing: border-box;
 }
+.logoName{
+  text-decoration: none;
+  color: white;
+}
 .navTabs {
   list-style: none;
   display: flex;
@@ -27,16 +31,24 @@
 .navTabs li {
   padding: 1px 5px;
 }
-.navTabs li:hover {
-  font-weight: bolder;
+.active{
   color: white;
+  font-weight: bolder;
+}
+.unActive{
+  color: white;
+  text-decoration: none;
+  opacity: 0.5;
 }
 .mainNav .navBtn {
-  width: fit-content;
   padding: 3px 10px;
   margin-right: 10px;
 }
 
+.dropdown{
+  appearance: none;
+  width: 100px;
+}
 @media screen and (max-width: 500px) {
   .mainNav {
     display: flex;
