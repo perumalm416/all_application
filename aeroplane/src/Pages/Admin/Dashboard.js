@@ -1,7 +1,7 @@
 
 
 
-export const DashboardPage=()=>{
+export const Dashboard=()=>{
     return<div>
         <h2>Dashboard page</h2>
     </div>
