@@ -1,12 +1,14 @@
+import { Fragment } from "react";
 import { RouterProvider } from "react-router-dom";
-import { RootLayout } from "./Common/RootLayout/RootLayout";
-import { RouterConfigure } from "./Common/Router";
-
+import { RouterConfigure } from "./Component/Router";
+import "./App.css"
 function App() {
   return (
-    <div className="">
-      <RouterProvider router={RouterConfigure}/>
-    </div>
+    <Fragment>
+      <div className="background">
+        <RouterProvider router={RouterConfigure} />
+      </div>
+    </Fragment>
   );
 }
 export default App;

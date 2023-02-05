@@ -1,0 +1,37 @@
+.singleField {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+  box-sizing: border-box;
+}
+.multiField {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 5px;
+  gap: 5px;
+  box-sizing: border-box;
+}
+.userForm label,
+input {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+.signBtn {
+  display: block;
+  width: 100%;
+  background-color: rgb(4, 92, 4);
+  color: white;
+  font-weight: bold;
+  border: 2px solid rgb(33, 104, 33);
+  padding: 5px;
+  margin: 10px auto 0px;
+}
+.userForm span {
+  text-decoration: underline;
+  color: blue;
+  font-weight: bold;
+  margin-left: 5px;
+  cursor: pointer;
+}

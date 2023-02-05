@@ -1,25 +1,12 @@
-/* 
-
-.headNavbar{}
-.sideNavbar{
-    background-color: rgb(209, 243, 229);
-  width: 15%;
-  float: left;
-  overflow: scroll;
-  height: 100%;
-  
+.headNavbar {
+  margin: 0px;
+  padding: 0px;
+  background-image: url("./aeroplan.jpg");
+  background-size: cover;
+  overflow: auto;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
 }
-.mainBody{
-    width: 85%;
-    float: left;
-    height: 100%;
-    overflow: scroll;
-    background-color: rgb(240, 210, 217);
-}
-
-@media screen and (max-width:400px) {
-    .sideNavbar{
-        width: 30%;
-       
-    }
-} */

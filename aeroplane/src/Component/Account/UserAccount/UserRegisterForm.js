@@ -1,10 +1,11 @@
 import { Fragment } from "react";
-import cssStyle from "./Passenger.module.css";
+import cssStyle from "./UserAccountForm.module.css";
 
-export const PassengerSignUp = () => {
+export const UserRegister = (props) => {
   return (
     <Fragment>
-      <form className={cssStyle.signForm}>
+      <form className={cssStyle.userForm}>
+        <h3>User Register Form</h3>
         <div className={cssStyle.singleField}>
           <div className="">
             <label htmlFor="firstName">First Name</label>
@@ -51,10 +52,11 @@ export const PassengerSignUp = () => {
           </div>
         </div>
 
-        <button className={cssStyle.signBtn} id="signUp" type="submit">
-          Sign Up
-        </button>
+        <button className={cssStyle.signBtn} type="submit">Register</button>
+        <hr/>or
+        <p>Do have an account? <span onClick={()=>props.isNewUserForm(false)}>Login</span></p>
       </form>
+
     </Fragment>
   );
 };

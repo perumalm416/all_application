@@ -7,7 +7,7 @@ export const MyProfiler = () => {
       <div className={cssStyle.backDrop}/>
       <h2>Profiler Page</h2>
       <div className={cssStyle.profiler}>
-        <img src="" alt="Profiler Image" width="100" />
+        <img src="" alt="Profiler_Image" width="100" />
         <p>firstName LastName</p>
         <p>Email Address</p>
         <p>Mobile Number</p>
