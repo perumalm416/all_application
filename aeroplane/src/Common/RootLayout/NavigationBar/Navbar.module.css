@@ -1,11 +1,10 @@
 .mainNav {
-  margin: 0px;
-  padding: 0px;
   background-color: rgb(12, 4, 45);
   color: white;
   text-align: center;
   line-height: 50px;
   display: flex;
+  box-sizing: border-box;
   justify-content: space-between;
 }
 .mainNav img {
@@ -18,7 +17,7 @@
   border-radius: 6px;
   box-sizing: border-box;
 }
-.logoName{
+.logoName {
   text-decoration: none;
   color: white;
 }
@@ -31,28 +30,49 @@
 .navTabs li {
   padding: 1px 5px;
 }
-.active{
+.active {
   color: white;
   font-weight: bolder;
 }
-.unActive{
+.unActive {
   color: white;
   text-decoration: none;
   opacity: 0.5;
 }
-.mainNav .navBtn {
+.loginBtn {
+  padding: 3px 10px;
+  margin-right: 10px;
+}
+.menubarBtn {
+  display: none;
   padding: 3px 10px;
   margin-right: 10px;
 }
 
-.dropdown{
-  appearance: none;
-  width: 100px;
-}
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
+  .navTabs {
+    display: none;
+  }
+  .menubarBtn {
+    display: inline;
+    padding: 2px 5px;
+    margin-right: 5px;
+  }
+  .loginBtn {
+    padding: 2px 5px;
+    margin-right: 5px;
+  }
   .mainNav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    font-size: small;
+  }
+  .mainNav img {
+    width: 15px;
+    height: 15px;
+    border: 1px solid white;
+    vertical-align: middle;
+    margin:0px;
+    object-fit: cover;
+    border-radius: 2px;
+    box-sizing: border-box;
   }
 }
