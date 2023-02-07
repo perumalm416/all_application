@@ -1,5 +1,4 @@
 import { Fragment, useState } from "react";
-import { FlightList } from "./FlightList";
 import cssStyle from "./AddFlightForm.module.css";
 
 const originPlace = [
@@ -10,6 +9,17 @@ const originPlace = [
   "Bangalore",
   "Mumbai",
   "Delhi",
+];
+
+const flightNameList = [
+  "AirAsia",
+  "AirIndia",
+  "AirIndiaExpress",
+  "GoFirst",
+  "IndiGo",
+  "SpiceJet",
+  "Vistara",
+  "Saudia",
 ];
 
 export const AddFlightForm = () => {
@@ -29,6 +39,7 @@ export const AddFlightForm = () => {
   );
 
   const onFlightSelectHandler = (event) => {
+    console.log(event.target.value);
     setAddFlightInput((prevState) => {
       return { ...prevState, flightName: event.target.value };
     });
@@ -69,11 +80,36 @@ export const AddFlightForm = () => {
       arrivalDate: flightInput.arrivalDate,
       price: flightInput.price,
     };
-    console.log(flightDetails);
     setFlightInfo((prevState) => {
       return [...prevState, flightDetails];
     });
+
+    async function flightInfoStore() {
+      const response = await fetch(
+        "https://aeroplane-application-default-rtdb.firebaseio.com/add-flight-info.json",
+        {
+          method: "POST",
+          body: JSON.stringify(flightDetails),
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+      if (!response.ok) {
+        throw new Error("Flight-info-store to server process is failed");
+      }
+    }
+    flightInfoStore();
+    setAddFlightInput(() => {
+      return {
+        flightName: "",
+        origin: "",
+        destination: "",
+        departureDate: "",
+        arrivalDate: "",
+        price: "",
+      };
+    });
   };
+
   return (
     <Fragment>
       <div className={cssStyle.container}>
@@ -87,9 +123,14 @@ export const AddFlightForm = () => {
                 type="dropdown"
                 onChange={onFlightSelectHandler}
               >
-                <option>select flight</option>
-                <option>flight 1</option>
-                <option>flight 2</option>
+                <option selected disabled >
+                  Select Flight
+                </option>
+                {flightNameList.map((flightName, index) => (
+                  <option key={index} value={flightName}>
+                    {flightName}
+                  </option>
+                ))}
               </select>
             </div>
             <div>
@@ -98,6 +139,7 @@ export const AddFlightForm = () => {
                 type="number"
                 id="price"
                 name="price"
+                value={flightInput.price}
                 onChange={onPriceHandler}
               />
             </div>
@@ -107,6 +149,7 @@ export const AddFlightForm = () => {
                 type="date"
                 id="depatureDate"
                 name="depatureDate"
+                value={flightInput.departureDate}
                 onChange={onDepartureDateHandler}
               />
             </div>
@@ -116,6 +159,7 @@ export const AddFlightForm = () => {
                 type="date"
                 id="arrivalDate"
                 name="arrivalDate"
+                value={flightInput.arrivalDate}
                 onChange={onArrivalDateHandler}
               />
             </div>
@@ -158,7 +202,9 @@ export const AddFlightForm = () => {
             </div>
           </div>
           <div>
-            <button type="submit" className={cssStyle.AddBtn}>Add Flight</button>
+            <button type="submit" className={cssStyle.AddBtn}>
+              Add Flight
+            </button>
           </div>
         </form>
       </div>

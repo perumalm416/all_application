@@ -1,5 +1,5 @@
 .mainNav {
-  background-color: rgb(12, 4, 45);
+  background-color: rgba(12, 4, 45, 0.731);
   color: white;
   text-align: center;
   line-height: 50px;
@@ -19,7 +19,11 @@
 }
 .logoName {
   text-decoration: none;
-  color: white;
+  color: rgb(20, 118, 57);
+  margin-left: 30px;
+  font-size: 30px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
 }
 .navTabs {
   list-style: none;
