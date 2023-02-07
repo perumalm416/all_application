@@ -11,8 +11,8 @@ const [isMenubarShow,setIsMenubarShow]=useState(false);
   return (
     <Fragment>
       <nav className={cssStyle.mainNav}>
-        <div>
-          <img src="./logo.png" alt="logo" width="50" />
+        <div className={cssStyle.websiteLogo}>
+          {/* <img src="./logo.png" alt="logo" width="50" /> */}
           <Link className={cssStyle.logoName} to="dashboard">BS Airway</Link>
         </div>       
         <ul className={cssStyle.navTabs}>         

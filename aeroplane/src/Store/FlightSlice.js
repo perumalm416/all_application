@@ -1,13 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const FlightSlice = createSlice({
+const FlightSlice = createSlice({
   name: "flight",
   initialState: { flightList: [] },
   reducers: {
     newFlightInfo(state, action) {
-      const actionPayAction = action;
+     state.flightList= action.payload;
     },
   },
 });
 
 export const flightAction = FlightSlice.actions;
+
+export default FlightSlice;

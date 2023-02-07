@@ -9,7 +9,7 @@ export const UserNavbar = () => {
     <Fragment>
       <nav className={cssStyle.mainNav}>
         <div>
-          <img src="./logo.png" alt="logo" width="50" />
+          {/* <img src="./logo.png" alt="logo" width="50" /> */}
           <Link className={cssStyle.logoName} to="/">BS Airway</Link>
         </div>
         <ul className={cssStyle.navTabs}>         

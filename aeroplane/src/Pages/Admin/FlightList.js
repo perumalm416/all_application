@@ -1,8 +1,11 @@
 import { Fragment } from "react";
+import { useSelector } from "react-redux";
 import cssStyle from "./FlightList.module.css";
 
-export const FlightList = (props) => {
-  const flightInfo = props.flightInfo;
+export const FlightList = () => {
+  const flightStore = useSelector((state) => state.flight);
+  const flightInfo = flightStore.flightList;
+ 
   return (
     <Fragment>
       <div className={cssStyle.container}>
