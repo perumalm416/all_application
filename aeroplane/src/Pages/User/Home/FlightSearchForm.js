@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { flightSearchAction } from "../../../Store/UserFlightSlice";
+import cssStyle from "./FlightSearchForm.module.css";
 
 const FormElement = styled.form`
   & input,
@@ -81,8 +82,8 @@ export const FlightSearchForm = () => {
       returnDate: flightSearchInput.returnDate,
       classtype: flightSearchInput.classtype,
     };
-    
-    dispatch(flightSearchAction.flightSearchInfo((userFlightInput)));
+
+    dispatch(flightSearchAction.flightSearchInfo(userFlightInput));
     navigate("/flight-search-info");
   };
   return (
@@ -90,89 +91,89 @@ export const FlightSearchForm = () => {
       <div>
         <h3>Round trip</h3>
       </div>
-      <FormElement onSubmit={onSubmitHandler}>
-        <div>
-          <label htmlFor="originPlace">From</label>
-          <select
-            id="originPlace"
-            type="dropdown"
-            name="originPlace"
-            onChange={onOriginPlaceHandler}
-          >
-            <option disabled selected>
-              Setect Origin
-            </option>
-            {originPlace.map((place, index) => (
-              <option value={place} key={index}>
-                {place}
+      <form className={cssStyle.container} onSubmit={onSubmitHandler}>
+        <div className={cssStyle.dblDisplayField}>
+          <div>
+            <label htmlFor="originPlace">From</label>
+            <select
+              id="originPlace"
+              type="dropdown"
+              name="originPlace"
+              onChange={onOriginPlaceHandler}
+            >
+              <option disabled selected>
+                ------Setect Origin------
               </option>
-            ))}
-          </select>
-        </div>
-        <div>
-          <label htmlFor="destinationPlace">To</label>
-          <select
-            id="destinationPlace"
-            type="dropdown"
-            name="destinationPlace"
-            placeholder="Destination"
-            onChange={onDestinationPlaceHandler}
-          >
-            <option disabled selected>
-              Select Destination
-            </option>
-            {destinationPlace.map((place, index) => (
-              <option value={place} key={index}>
-                {place}
+              {originPlace.map((place, index) => (
+                <option value={place} key={index}>
+                  {place}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label htmlFor="destinationPlace">To</label>
+            <select
+              id="destinationPlace"
+              type="dropdown"
+              name="destinationPlace"
+              placeholder="Destination"
+              onChange={onDestinationPlaceHandler}
+            >
+              <option disabled selected>
+                ------Select Destination------
               </option>
-            ))}
-          </select>
+              {destinationPlace.map((place, index) => (
+                <option value={place} key={index}>
+                  {place}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label htmlFor="noOfPassengers">No of Passengers</label>
+            <input
+              id="noOfPassengers"
+              type="number"
+              min="1"
+              max="60"
+              placeholder="No of passengers"
+              onChange={onNoOfPassengersHandler}
+            />
+          </div>
+          <div>
+            <label htmlFor="departureDate">Departure</label>
+            <input
+              id="departureDate"
+              type="date"
+              onChange={onDepartureDateHandler}
+            />
+          </div>
+          <div>
+            <label htmlFor="returnDate">Return</label>
+            <input id="returnDate" type="date" onChange={onReturnDateHandler} />
+          </div>
+          <div>
+            <label htmlFor="classType">Travel Class</label>
+            <select
+              id="classType"
+              type="dropdown"
+              name="classType"
+              onChange={onClassTypeHandler}
+            >
+              <option disabled selected>
+                ------Class Type------
+              </option>
+              <option value="First Class">First Class</option>
+              <option value="Business Class">Business Class</option>
+              <option value="Economy Class">Economy Class</option>
+            </select>
+          </div>
         </div>
-        <div>
-          <label htmlFor="noOfPassengers">To</label>
-          <input
-            id="noOfPassengers"
-            type="number"
-            min="1"
-            max="60"
-            placeholder="No of passengers"
-            onChange={onNoOfPassengersHandler}
-          />
-        </div>
-        <div>
-          <label htmlFor="departureDate">Departure</label>
-          <input
-            id="departureDate"
-            type="date"
-            onChange={onDepartureDateHandler}
-          />
-        </div>
-        <div>
-          <label htmlFor="returnDate">Return</label>
-          <input id="returnDate" type="date" onChange={onReturnDateHandler} />
-        </div>
-        <div>
-          <label htmlFor="classType">Travel Class</label>
-          <select
-            id="classType"
-            type="dropdown"
-            name="classType"
-            onChange={onClassTypeHandler}
-          >
-            <option disabled selected>
-              Class Type
-            </option>
-            <option value="First Class">First Class</option>
-            <option value="Business Class">Business Class</option>
-            <option value="Economy Class">Economy Class</option>
-          </select>
-        </div>
-        <div>
-          <button type="submit" id="searchFlight">
-            Search Flight
-          </button>
-        </div>
-      </FormElement>
+        <button className={cssStyle.submitBtn} type="submit" id="searchFlight">
+          Search Flight
+        </button>
+      </form>
     </Fragment>
   );
 };

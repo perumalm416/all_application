@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Menubar } from "./Menubar";
+import { AdminMenubar } from "./AdminMenubar";
 import cssStyle from "./Navbar.module.css";
 
 export const AdminNavbar = () => {
@@ -26,7 +26,7 @@ const [isMenubarShow,setIsMenubarShow]=useState(false);
           <button className={cssStyle.menubarBtn} type="button" onClick={onMenubarHandler}>Menubar</button>         
         </div>
       </nav>
-      {isMenubarShow&&<Menubar onMenubarHandler={onMenubarHandler}/>}
+      {isMenubarShow&&<AdminMenubar onMenubarHandler={onMenubarHandler}/>}
     </Fragment>
   );
 };

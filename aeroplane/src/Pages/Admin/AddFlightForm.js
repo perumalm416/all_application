@@ -1,4 +1,5 @@
 import { Fragment, useState } from "react";
+import { useDispatch } from "react-redux";
 import cssStyle from "./AddFlightForm.module.css";
 
 const originPlace = [
@@ -24,7 +25,7 @@ const flightNameList = [
 
 export const AddFlightForm = () => {
   const [selectedOriginPlace, setSelectedOriginPlace] = useState();
-  const [flightInfo, setFlightInfo] = useState([]);
+  const dispatch = useDispatch();
   const [flightInput, setAddFlightInput] = useState({
     flightName: "",
     origin: "",
@@ -80,24 +81,14 @@ export const AddFlightForm = () => {
       arrivalDate: flightInput.arrivalDate,
       price: flightInput.price,
     };
-    setFlightInfo((prevState) => {
-      return [...prevState, flightDetails];
-    });
-
-    async function flightInfoStore() {
-      const response = await fetch(
-        "https://aeroplane-application-default-rtdb.firebaseio.com/add-flight-info.json",
-        {
-          method: "POST",
-          body: JSON.stringify(flightDetails),
-          headers: { "Content-Type": "application/json" },
-        }
-      );
-      if (!response.ok) {
-        throw new Error("Flight-info-store to server process is failed");
-      }
-    }
-    flightInfoStore();
+    const postConfigure = {
+      url: "https://aeroplane-application-default-rtdb.firebaseio.com/add-flight-info.json",
+      data: flightDetails,
+      methodType: "POST",
+      headers: { "Content-Type": "application/json" },
+    };
+    dispatch({ type: "ADD_FLIGHT_INFO", payload: postConfigure });
+    
     setAddFlightInput(() => {
       return {
         flightName: "",
@@ -123,7 +114,7 @@ export const AddFlightForm = () => {
                 type="dropdown"
                 onChange={onFlightSelectHandler}
               >
-                <option selected disabled >
+                <option selected disabled>
                   Select Flight
                 </option>
                 {flightNameList.map((flightName, index) => (

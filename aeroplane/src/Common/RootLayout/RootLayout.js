@@ -1,19 +1,14 @@
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import { Outlet } from "react-router-dom";
 import { AdminNavbar } from "./NavigationBar/AdminNavbar";
 import { UserNavbar } from "./NavigationBar/UserNavbar";
-import cssStyle from "./RootLayout.module.css";
 
 export const RootLayout = () => {
-  const [isUserAccount, setIsUserAccount] = useState(false);
-
-  const pageLayout = isUserAccount ? cssStyle.userLayout : cssStyle.adminLayout;
-  
   return (
     <Fragment>
-      <div className={pageLayout}>
-        {/* <UserNavbar /> */}
-        <AdminNavbar />
+      <div>
+        <UserNavbar />
+        {/* <AdminNavbar /> */}
         <Outlet />
       </div>
     </Fragment>

@@ -11,7 +11,7 @@ export const AccountPage = () => {
   }
   return (
     <Fragment>     
-      <div className={cssStyle.account}>
+      <div id="accountId" className={cssStyle.account}>
       {isNewUser?<UserRegister isNewUserForm={onUserFormHandler}/>:<UserLoginForm isNewUserForm={onUserFormHandler}/>}
       </div>
     </Fragment>

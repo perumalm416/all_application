@@ -1,0 +1,23 @@
+.userLayout {
+    background-image: url("./Image/userBackground.jpg");
+    background-size: cover;
+    overflow: auto;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  
+  }
+  
+  .adminLayout{
+    background-image: url("./Image/adminBackground.jpg");
+    background-size: cover;
+    overflow: auto;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+  

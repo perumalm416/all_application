@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import cssStyle from "./Menubar.module.css";
 
-export const Menubar = (props) => {
+export const AdminMenubar = (props) => {
 
   return (
     <div >      
